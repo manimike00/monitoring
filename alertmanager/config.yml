@@ -1,0 +1,13 @@
+route:
+  receiver: 'email'
+
+receivers:
+  - name: 'email'
+    email_configs:
+      - to: 'aws.projects@rapyder.com'
+        from: tally-ecs-alerts@rcspoc.com
+        smarthost: email-smtp.ap-south-1.amazonaws.com:587
+        auth_username:
+        auth_identity: tally-ecs-alerts@rcspoc.com
+        auth_password:
+        send_resolved: true
