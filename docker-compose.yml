@@ -34,7 +34,7 @@ services:
 
   ecsexporter:
     image: slok/ecs-exporter
-    container_name: ecs-exporter
+    container_name: ecsexporter
     command:
       - '-aws.region="ap-south-1"'
       - '-aws.cluster-filter="Tally-ECS-Cluster-V2"'
