@@ -23,6 +23,7 @@ services:
       - '--web.console.templates=/etc/prometheus/consoles'
       - '--storage.tsdb.retention.time=200h'
       - '--web.enable-lifecycle'
+      - '--web.external-url=http://0.0.0.0:9090/prometheus/'
     restart: unless-stopped
     expose:
       - 9090
