@@ -32,6 +32,20 @@ services:
     labels:
       org.label-schema.group: "monitoring"
 
+  ecsexporter:
+    image: slok/ecs-exporter
+    container_name: ecs-exporter
+    command:
+      - '-aws.region="ap-south-1"'
+      - '-aws.cluster-filter="Tally-ECS-Cluster-V2"'
+    restart: unless-stopped
+    ports:
+      - "9222"
+    networks:
+      - monitor-net
+    labels:
+      org.label-schema.group: "monitoring"
+
       #  alertmanager:
       #    image: prom/alertmanager:v0.21.0
       #    container_name: alertmanager
